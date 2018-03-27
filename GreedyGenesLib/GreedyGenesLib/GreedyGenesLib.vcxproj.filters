@@ -53,16 +53,16 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClusterMatroid.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GreedyAlgorithm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="MinCoverSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MaxClusterSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GreedyAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterMatroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
