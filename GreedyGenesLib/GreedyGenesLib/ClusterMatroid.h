@@ -9,9 +9,9 @@ public:
 
     ClusterMatroidParams::CollectionType& GetGroundElements() const override;
 
-    SubSetsSet& GetIndependentSubsets() const override;
+    ClusterMatroidParams::SubSetsSet& GetIndependentSubsets() const override;
 
 private:
     mutable ClusterMatroidParams::CollectionType m_groundSet;
-    mutable SubSetsSet m_clusters;
+    mutable ClusterMatroidParams::SubSetsSet m_clusters;
 };

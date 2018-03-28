@@ -11,7 +11,7 @@ ClusterMatroidParams::CollectionType& ClusterMatroid::GetGroundElements() const
     return m_groundSet;
 }
 
-ClusterMatroid::SubSetsSet& ClusterMatroid::GetIndependentSubsets() const
+ClusterMatroidParams::SubSetsSet& ClusterMatroid::GetIndependentSubsets() const
 {
     return m_clusters;
 }

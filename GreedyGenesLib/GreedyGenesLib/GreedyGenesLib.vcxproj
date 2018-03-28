@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CrossoverStrategy.h" />
+    <ClInclude Include="FloorPlanningSolver.h" />
     <ClInclude Include="GeneticAlgorithm.h" />
     <ClInclude Include="ClusterMatroid.h" />
     <ClInclude Include="GreedyAlgorithm.h" />
@@ -152,11 +154,15 @@
     <ClInclude Include="Matroid.h" />
     <ClInclude Include="MaxClusterSolver.h" />
     <ClInclude Include="MinCoverSolver.h" />
+    <ClInclude Include="MutationStrategy.h" />
+    <ClInclude Include="ReproductionStrategy.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="FloorPlanningMatroid.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClusterMatroid.cpp" />
+    <ClCompile Include="FloorPlanningMatroid.cpp" />
     <ClCompile Include="GreedyAlgorithm.cpp" />
     <ClCompile Include="MaxClusterSolver.cpp" />
     <ClCompile Include="MinCoverSolver.cpp" />
