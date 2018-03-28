@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Matroid.h"
+#include "Types.h"
+
 #include <memory>
 #include <vector>
 #include <set>
@@ -48,4 +50,6 @@ struct FloorPlanningMatroidParams
     using CollectionType = std::vector<ElementType>;
     using SubSetsSet = std::vector<CollectionType>;
     using ResultType = std::vector<long>;
+
+    FloorPlanningCoastCriteria coast;
 };

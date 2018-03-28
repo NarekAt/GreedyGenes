@@ -20,7 +20,7 @@ void FloorPlanningSolver::Solve()
 
         m_order.erase(it);
         ++it;
-        // select a location for b that will result in
+        // select a location for mod that will result in
         // minimum increase in cost function
     }
 }
