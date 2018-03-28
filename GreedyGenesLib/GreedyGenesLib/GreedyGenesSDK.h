@@ -36,16 +36,16 @@ struct ClusterMatroidParams
 struct FloorPlanningMatroidParams
 {
     // types
-    using ElementType = long;
-
-    struct Module
+    struct Cell
     {
+        uint64_t id;
+
         long height;
         long weight;
-        std::vector<ElementType> net;
     };
 
+    using ElementType = Cell;
     using CollectionType = std::vector<ElementType>;
-    using SubSetsSet = std::vector<Module>;
+    using SubSetsSet = std::vector<CollectionType>;
     using ResultType = std::vector<long>;
 };

@@ -33,7 +33,7 @@ void MinCoverSolver::Solve()
         }));
 
         // peel-off
-        for (auto i = 0; i != clusters.size() && clusters[i].size() != 0; ++i)
+        for (SizeType i = 0; i != clusters.size() && clusters[i].size() != 0; ++i)
         {
             auto& cluster = clusters[i];
             ClusterMatroidParams::CollectionType diff;

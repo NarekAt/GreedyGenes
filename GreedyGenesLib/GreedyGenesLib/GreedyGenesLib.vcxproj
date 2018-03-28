@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClCompile Include="ClusterMatroid.cpp" />
     <ClCompile Include="FloorPlanningMatroid.cpp" />
+    <ClCompile Include="FloorPlanningSolver.cpp" />
     <ClCompile Include="GreedyAlgorithm.cpp" />
     <ClCompile Include="MaxClusterSolver.cpp" />
     <ClCompile Include="MinCoverSolver.cpp" />

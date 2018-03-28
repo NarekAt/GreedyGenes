@@ -2,6 +2,7 @@
 
 #include "GreedyGenesSDK.h"
 #include "GreedyStrategy.h"
+#include <unordered_map>
 
 class FloorPlanningSolver : public GreedyStrategy<FloorPlanningMatroidParams>
 {
@@ -13,11 +14,15 @@ public:
     FloorPlanningMatroidParams::ResultType GetResults() override;
 
 private:
+    // Helpers
     void LinearOrder();
-    long ComputeGain(FloorPlanningMatroidParams::Module& m);
+    long ComputeGain(FloorPlanningMatroidParams::ElementType& m);
+    void RemoveMaxModule(FloorPlanningMatroidParams::CollectionType modules, SizeType pos);
 
 private:
     MatroidPtr m_matroid;
     FloorPlanningMatroidParams m_params;
-    SizeType m_maxWeight;
+
+    FloorPlanningMatroidParams::CollectionType m_order;
+    std::unordered_map<uint64_t, std::tuple<long, long, long>> m_network;
 };
