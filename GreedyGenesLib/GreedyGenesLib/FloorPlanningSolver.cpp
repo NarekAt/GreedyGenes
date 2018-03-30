@@ -47,16 +47,16 @@ void FloorPlanningSolver::LinearOrder()
 
     while (!modules.empty())
     {
-        for (SizeType i = 0; i != modules.size(); ++i)
+        for (size_t i = 0; i != modules.size(); ++i)
         {
             gains[i] = ComputeGain(modules[i]);
         }
 
         FloorPlanningMatroidParams::CollectionType ties;
         long max = std::numeric_limits<long>::min();
-        SizeType maxPos = -1;
+        size_t maxPos = -1;
 
-        for (SizeType i = 0; i != gains.size(); ++i)
+        for (size_t i = 0; i != gains.size(); ++i)
         {
             if (gains[i] >= max)
             {
@@ -123,7 +123,7 @@ long FloorPlanningSolver::ComputeGain(FloorPlanningMatroidParams::ElementType& m
     return (numOfNetsTerminatedByM - numOfNetsStartedByM);
 }
 
-void FloorPlanningSolver::RemoveMaxModule(FloorPlanningMatroidParams::CollectionType modules, SizeType pos)
+void FloorPlanningSolver::RemoveMaxModule(FloorPlanningMatroidParams::CollectionType modules, size_t pos)
 {
     modules.erase(modules.begin() + pos);
 }

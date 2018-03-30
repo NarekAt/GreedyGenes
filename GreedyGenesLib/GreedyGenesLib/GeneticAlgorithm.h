@@ -19,6 +19,6 @@ protected:
 
 protected:
     ReproductionStrategyPtr m_reproduction;
-    CrossoverStrategyPtr m_crossover;
-    MutatationStrategyPtr m_mutation;
+    CrossoverStrategyPtr    m_crossover;
+    MutatationStrategyPtr   m_mutation;
 };

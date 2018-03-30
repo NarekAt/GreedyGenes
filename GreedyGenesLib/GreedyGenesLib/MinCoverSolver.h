@@ -18,6 +18,6 @@ private:
 private:
     MatroidPtr m_matroid;
     ClusterMatroidParams m_params;
-    SizeType m_maxWeight;
+    size_t m_maxWeight;
     ClusterMatroidParams::SubSetsSet m_clusterCover;
 };

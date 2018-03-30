@@ -7,3 +7,9 @@ enum class FloorPlanningCoastCriteria
     MAX_ROUTE,
     MIN_DELAY
 };
+
+enum class CellPlacementCriteria
+{
+    MIN_WIRE,
+    MIN_MAX_CUT
+};

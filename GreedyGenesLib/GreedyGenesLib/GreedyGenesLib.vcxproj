@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CellPlacementMatroid.h" />
+    <ClInclude Include="CellPlacementMaxConSolver.h" />
     <ClInclude Include="CrossoverStrategy.h" />
     <ClInclude Include="FloorPlanningSolver.h" />
     <ClInclude Include="GeneticAlgorithm.h" />
@@ -159,8 +161,11 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="FloorPlanningMatroid.h" />
+    <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CellPlacementMatroid.cpp" />
+    <ClCompile Include="CellPlacementMaxConSolver.cpp" />
     <ClCompile Include="ClusterMatroid.cpp" />
     <ClCompile Include="FloorPlanningMatroid.cpp" />
     <ClCompile Include="FloorPlanningSolver.cpp" />

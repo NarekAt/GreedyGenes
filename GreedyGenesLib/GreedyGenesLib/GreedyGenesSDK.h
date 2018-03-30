@@ -7,9 +7,6 @@
 #include <vector>
 #include <set>
 
-using SizeType = long;
-
-
 struct ClusterMatroidParams
 {
     // types
@@ -27,24 +24,25 @@ struct ClusterMatroidParams
 
     using CollectionType = std::set<ElementType>;
     using SubSetsSet = std::vector<CollectionType>;
-    using ResultType = std::pair<SubSetsSet, SizeType>;
+    using ResultType = std::pair<SubSetsSet, size_t>;
 
     // data
     uint8_t  alpha;
     uint32_t k;
 };
 
+struct Cell
+{
+    size_t id;
+
+    long height;
+    long weight;
+};
+
 
 struct FloorPlanningMatroidParams
 {
     // types
-    struct Cell
-    {
-        uint64_t id;
-
-        long height;
-        long weight;
-    };
 
     using ElementType = Cell;
     using CollectionType = std::vector<ElementType>;
@@ -52,4 +50,16 @@ struct FloorPlanningMatroidParams
     using ResultType = std::vector<long>;
 
     FloorPlanningCoastCriteria coast;
+};
+
+struct CellPlacementMatroidParams
+{
+    using ElementType = Cell;
+    using CollectionType = std::vector<ElementType>;
+
+    // Connectivity matrix
+    using SubSetsSet = std::vector<std::vector<size_t>>;
+    using ResultType = std::vector<uint64_t>;
+
+    CellPlacementCriteria coast;
 };

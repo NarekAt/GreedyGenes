@@ -17,7 +17,7 @@ private:
     // Helpers
     void LinearOrder();
     long ComputeGain(FloorPlanningMatroidParams::ElementType& m);
-    void RemoveMaxModule(FloorPlanningMatroidParams::CollectionType modules, SizeType pos);
+    void RemoveMaxModule(FloorPlanningMatroidParams::CollectionType modules, size_t pos);
 
 private:
     MatroidPtr m_matroid;

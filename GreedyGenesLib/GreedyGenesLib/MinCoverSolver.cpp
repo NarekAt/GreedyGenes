@@ -18,7 +18,7 @@ void MinCoverSolver::Solve()
 
     auto groundSet = m_matroid->GetGroundElements();
     auto clusters = m_matroid->GetIndependentSubsets();
-    std::vector<SizeType> clusterWeights(clusters.size(), 0);
+    std::vector<size_t> clusterWeights(clusters.size(), 0);
 
     while (E1.size() < m_params.alpha * groundSet.size())
     {
@@ -33,7 +33,7 @@ void MinCoverSolver::Solve()
         }));
 
         // peel-off
-        for (SizeType i = 0; i != clusters.size() && clusters[i].size() != 0; ++i)
+        for (size_t i = 0; i != clusters.size() && clusters[i].size() != 0; ++i)
         {
             auto& cluster = clusters[i];
             ClusterMatroidParams::CollectionType diff;
