@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GreedyGenesSDK.h"
+#include "GreedySDK.h"
 #include "Algorithm.h"
 #include "Matroid.h"
 #include "GreedyStrategy.h"

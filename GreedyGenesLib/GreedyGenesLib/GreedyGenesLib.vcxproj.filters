@@ -24,9 +24,6 @@
     <ClInclude Include="Matroid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GreedyGenesSDK.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GreedyAlgorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,6 +69,18 @@
     <ClInclude Include="CellPlacementMatroid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PMXCellPlacementCrossover.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chromosome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedySDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneticSDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -99,6 +108,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CellPlacementMatroid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PMXCellPlacementCrossover.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

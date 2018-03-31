@@ -1,5 +1,5 @@
 #pragma once
-#include "GreedyGenesSDK.h"
+#include "GreedySDK.h"
 #include "GreedyStrategy.h"
 
 

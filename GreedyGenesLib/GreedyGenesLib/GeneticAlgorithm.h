@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GreedyGenesSDK.h"
+#include "GeneticSDK.h"
 #include "Algorithm.h"
 #include "ReproductionStrategy.h"
 #include "CrossoverStrategy.h"
@@ -10,7 +10,7 @@ class GeneticAlgorithm : public IAlgorithm
 {
 public:
     void Solve();
-    void GetBestChromosome();
+    ChromosomePtr GetBestChromosome();
 
 protected:
     virtual void InitializeGeneration() = 0;

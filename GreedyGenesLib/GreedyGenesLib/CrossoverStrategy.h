@@ -1,11 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "GeneticSDK.h"
 
 class CrossoverStrategy
 {
 public:
-    virtual void Crossover() = 0;
+    virtual ChromosomePtr Crossover(ChromosomePtr parent1, ChromosomePtr parent2) = 0;
 
     virtual ~CrossoverStrategy() = default;
 };

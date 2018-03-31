@@ -147,16 +147,19 @@
     <ClInclude Include="CellPlacementMaxConSolver.h" />
     <ClInclude Include="CrossoverStrategy.h" />
     <ClInclude Include="FloorPlanningSolver.h" />
+    <ClInclude Include="Chromosome.h" />
     <ClInclude Include="GeneticAlgorithm.h" />
     <ClInclude Include="ClusterMatroid.h" />
+    <ClInclude Include="GeneticSDK.h" />
     <ClInclude Include="GreedyAlgorithm.h" />
     <ClInclude Include="Algorithm.h" />
-    <ClInclude Include="GreedyGenesSDK.h" />
+    <ClInclude Include="GreedySDK.h" />
     <ClInclude Include="GreedyStrategy.h" />
     <ClInclude Include="Matroid.h" />
     <ClInclude Include="MaxClusterSolver.h" />
     <ClInclude Include="MinCoverSolver.h" />
     <ClInclude Include="MutationStrategy.h" />
+    <ClInclude Include="PMXCellPlacementCrossover.h" />
     <ClInclude Include="ReproductionStrategy.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -172,6 +175,7 @@
     <ClCompile Include="GreedyAlgorithm.cpp" />
     <ClCompile Include="MaxClusterSolver.cpp" />
     <ClCompile Include="MinCoverSolver.cpp" />
+    <ClCompile Include="PMXCellPlacementCrossover.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
