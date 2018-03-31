@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\greedy">
+      <UniqueIdentifier>{990d4946-49f1-47f4-8fd5-f571924ef1f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\genetic">
+      <UniqueIdentifier>{7f240d94-d53c-416e-a40a-d7dea04e4a53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -21,65 +27,65 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Matroid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GreedyAlgorithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Algorithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneticAlgorithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GreedyStrategy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClusterMatroid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MaxClusterSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MinCoverSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CrossoverStrategy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MutationStrategy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReproductionStrategy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FloorPlanningSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FloorPlanningMatroid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CellPlacementMaxConSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CellPlacementMatroid.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\greedy</Filter>
     </ClInclude>
-    <ClInclude Include="PMXCellPlacementCrossover.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CellPlacementMaxConSolver.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterMatroid.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorPlanningMatroid.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorPlanningSolver.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedyStrategy.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="Matroid.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="MaxClusterSolver.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="MinCoverSolver.h">
+      <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="CrossoverStrategy.h">
+      <Filter>Header Files\genetic</Filter>
     </ClInclude>
     <ClInclude Include="Chromosome.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\genetic</Filter>
     </ClInclude>
-    <ClInclude Include="GreedySDK.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GeneticAlgorithm.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="MutationStrategy.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="PMXCellPlacementCrossover.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="ReproductionStrategy.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedyAlgorithm.h">
+      <Filter>Header Files\greedy</Filter>
     </ClInclude>
     <ClInclude Include="GeneticSDK.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedySDK.h">
+      <Filter>Header Files\greedy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
