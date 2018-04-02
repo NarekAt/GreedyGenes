@@ -1,1 +1,1 @@
-# GreedyPlus
+# GreedyGenes
