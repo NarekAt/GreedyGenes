@@ -1,10 +1,10 @@
 #pragma once
-#include <memory>
+#include "GeneticSDK.h"
 
 class MutatationStrategy
 {
 public:
-    virtual void Mutate() = 0;
+    virtual void Mutate(Generation& gen) = 0;
 
     virtual ~MutatationStrategy() = default;
 };

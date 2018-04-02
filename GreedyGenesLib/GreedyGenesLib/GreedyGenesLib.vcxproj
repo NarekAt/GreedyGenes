@@ -146,6 +146,7 @@
     <ClInclude Include="CellPlacementMatroid.h" />
     <ClInclude Include="CellPlacementMaxConSolver.h" />
     <ClInclude Include="CrossoverStrategy.h" />
+    <ClInclude Include="FitnessEvaluationStrategy.h" />
     <ClInclude Include="FloorPlanningSolver.h" />
     <ClInclude Include="Chromosome.h" />
     <ClInclude Include="GeneticAlgorithm.h" />
@@ -155,12 +156,13 @@
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="GreedySDK.h" />
     <ClInclude Include="GreedyStrategy.h" />
+    <ClInclude Include="InversionStrategy.h" />
     <ClInclude Include="Matroid.h" />
     <ClInclude Include="MaxClusterSolver.h" />
     <ClInclude Include="MinCoverSolver.h" />
+    <ClInclude Include="MinWireLengthCellPlacementFitness.h" />
     <ClInclude Include="MutationStrategy.h" />
     <ClInclude Include="PMXCellPlacementCrossover.h" />
-    <ClInclude Include="ReproductionStrategy.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="FloorPlanningMatroid.h" />
@@ -175,6 +177,7 @@
     <ClCompile Include="GreedyAlgorithm.cpp" />
     <ClCompile Include="MaxClusterSolver.cpp" />
     <ClCompile Include="MinCoverSolver.cpp" />
+    <ClCompile Include="MinWireLengthCellPlacementFitness.cpp" />
     <ClCompile Include="PMXCellPlacementCrossover.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

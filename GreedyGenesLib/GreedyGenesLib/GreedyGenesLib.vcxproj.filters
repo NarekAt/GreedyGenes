@@ -75,9 +75,6 @@
     <ClInclude Include="PMXCellPlacementCrossover.h">
       <Filter>Header Files\genetic</Filter>
     </ClInclude>
-    <ClInclude Include="ReproductionStrategy.h">
-      <Filter>Header Files\genetic</Filter>
-    </ClInclude>
     <ClInclude Include="GreedyAlgorithm.h">
       <Filter>Header Files\greedy</Filter>
     </ClInclude>
@@ -86,6 +83,15 @@
     </ClInclude>
     <ClInclude Include="GreedySDK.h">
       <Filter>Header Files\greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="InversionStrategy.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="FitnessEvaluationStrategy.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="MinWireLengthCellPlacementFitness.h">
+      <Filter>Header Files\genetic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +123,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PMXCellPlacementCrossover.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MinWireLengthCellPlacementFitness.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
