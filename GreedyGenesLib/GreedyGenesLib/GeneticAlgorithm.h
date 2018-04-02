@@ -6,11 +6,14 @@
 #include "MutationStrategy.h"
 #include "InversionStrategy.h"
 #include "FitnessEvaluationStrategy.h"
+#include <algorithm>
 
 template <class Params>
 class GeneticAlgorithm : public IAlgorithm
 {
 public:
+    GeneticAlgorithm() = default;
+
     GeneticAlgorithm(CrossoverStrategyPtr crossover,
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
@@ -51,7 +54,27 @@ protected:
     virtual void InitialGeneration() = 0;
     virtual void IncrementGenerations() = 0;
 
-    std::pair<ChromosomePtr, ChromosomePtr> ChooseParents();
+    auto ChooseParents()
+    {
+        std::sort(m_generation.begin(), m_generation.end(),
+            [](ChromosomePtr ch1, ChromosomePtr ch2)
+            {
+                return ch1->GetFitness() > ch2->GetFitness();
+            });
+
+        std::pair<ChromosomePtr, ChromosomePtr> parents;
+        parents.first = m_generation[0];
+
+        auto it = std::find_if(m_generation.begin(), m_generation.end(),
+            [](ChromosomePtr ch)
+            {
+                return ch->GetFitness() != parents.first;
+            });
+
+        parents.second = (it != m_generation.end() ? *it : parents.first);
+
+        return parents;
+    }
 
 protected:
     CrossoverStrategyPtr         m_crossover;
