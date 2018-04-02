@@ -93,6 +93,12 @@
     <ClInclude Include="MinWireLengthCellPlacementFitness.h">
       <Filter>Header Files\genetic</Filter>
     </ClInclude>
+    <ClInclude Include="PairwiseInterchangeMutation.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoPointInversion.h">
+      <Filter>Header Files\genetic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -126,6 +132,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MinWireLengthCellPlacementFitness.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PairwiseInterchangeMutation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoPointInversion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
