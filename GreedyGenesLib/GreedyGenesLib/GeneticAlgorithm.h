@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GeneticSDK.h"
-#include "Algorithm.h"
 #include "CrossoverStrategy.h"
 #include "MutationStrategy.h"
 #include "InversionStrategy.h"
@@ -9,7 +8,7 @@
 #include <algorithm>
 
 template <class Params>
-class GeneticAlgorithm : public IAlgorithm
+class GeneticAlgorithm
 {
 public:
     GeneticAlgorithm() = default;
@@ -17,11 +16,13 @@ public:
     GeneticAlgorithm(CrossoverStrategyPtr crossover,
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
-        FitnessEvaluationStrategyPtr<Params> fitness)
+        FitnessEvaluationStrategyPtr<Params> fitness,
+        size_t numOfGenerations)
         : m_crossover(crossover)
         , m_mutation(mutation)
         , m_inversion(inversion)
         , m_fitness(fitness)
+        , m_numberOfGenerations(numOfGenerations)
     {}
 
     void Solve()
@@ -32,28 +33,37 @@ public:
 
         for (size_t i = 0; i != m_numberOfGenerations; ++i)
         {
-            for (size_t j = 0; j != m_numberOfOffsprings; ++j)
-            {
-                auto parents = ChooseParents();
+            auto parents = ChooseParents();
 
-                m_offsprings[j] = (m_crossover->Crossover(parents.first, parents.second)).back();
+            auto offSprings = m_crossover->Crossover(parents.first, parents.second);
+            m_generation.insert(std::end(m_generation), std::begin(offSprings), std::end(offSprings));
 
-                m_mutation->Mutate(m_generation);
+            m_mutation->Mutate(m_generation);
 
-                m_inversion->Inverse(m_generation);
+            m_inversion->Inverse(m_generation);
 
-                m_fitness->Evaluate(m_generation);
-            }
+            m_fitness->Evaluate(m_generation);
+
             IncrementGenerations();
         }
     }
 
-    ChromosomePtr GetBestChromosome();
+    ChromosomePtr GetBestChromosome()
+    {
+        auto it = std::max_element(std::begin(m_generation), std::end(m_generation),
+            [](ChromosomePtr ch1, ChromosomePtr ch2)
+            {
+                return ch1->GetFitness() < ch2->GetFitness();
+            });
+
+        return *it;
+    }
 
 protected:
     virtual void InitialGeneration() = 0;
     virtual void IncrementGenerations() = 0;
 
+private:
     auto ChooseParents()
     {
         std::sort(m_generation.begin(), m_generation.end(),
@@ -66,9 +76,9 @@ protected:
         parents.first = m_generation[0];
 
         auto it = std::find_if(m_generation.begin(), m_generation.end(),
-            [](ChromosomePtr ch)
+            [&](ChromosomePtr ch)
             {
-                return ch->GetFitness() != parents.first;
+                return ch->GetFitness() != parents.first->GetFitness();
             });
 
         parents.second = (it != m_generation.end() ? *it : parents.first);
@@ -83,8 +93,6 @@ protected:
     FitnessEvaluationStrategyPtr<Params> m_fitness;
 
     Generation m_generation;
-    Generation m_offsprings;
 
     size_t m_numberOfGenerations;
-    size_t m_numberOfOffsprings;
 };

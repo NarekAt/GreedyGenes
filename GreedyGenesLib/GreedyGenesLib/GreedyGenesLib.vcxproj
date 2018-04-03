@@ -153,9 +153,10 @@
     <ClInclude Include="ClusterMatroid.h" />
     <ClInclude Include="GeneticSDK.h" />
     <ClInclude Include="GreedyAlgorithm.h" />
-    <ClInclude Include="Algorithm.h" />
+    <ClInclude Include="GreedyPopulationGeneticAlgorithm.h" />
     <ClInclude Include="GreedySDK.h" />
     <ClInclude Include="GreedyStrategy.h" />
+    <ClInclude Include="IncrementalGeneticAlgorithm.h" />
     <ClInclude Include="InversionStrategy.h" />
     <ClInclude Include="Matroid.h" />
     <ClInclude Include="MaxClusterSolver.h" />
