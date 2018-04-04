@@ -20,7 +20,7 @@ public:
 
     GreedyPopulationGeneticAlgorithm() = default;
 
-    void SetGreedyAlgorithm(GreedyAlgorithm<Params> algo);
+    void SetGreedyAlgorithm(GreedyAlgorithm<Params>& algo);
 
 protected:
     void InitialGeneration() override;
@@ -39,7 +39,7 @@ inline void GreedyPopulationGeneticAlgorithm<Params>::InitialGeneration()
 }
 
 template<class Params>
-inline void GreedyPopulationGeneticAlgorithm<Params>::SetGreedyAlgorithm(GreedyAlgorithm<Params> algo)
+inline void GreedyPopulationGeneticAlgorithm<Params>::SetGreedyAlgorithm(GreedyAlgorithm<Params>& algo)
 {
     m_greedy = algo;
 }
