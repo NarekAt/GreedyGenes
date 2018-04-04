@@ -5,18 +5,18 @@
 #include <random>
 #include <cassert>
 
-constexpr char emptyGene = 'x';
+constexpr long emptyGene = -1;
 
 std::vector<ChromosomePtr>
 PMXCellPlacementCrossover::Crossover(ChromosomePtr parent1, ChromosomePtr parent2)
 {
     std::vector<ChromosomePtr> crossovers(1);
 
-    auto chromosome1 = parent1->AsString();
-    auto chromosome2 = parent2->AsString();
-    assert(chromosome1.size() == chromosome2.size());
+    auto genes1 = parent1->Representation();
+    auto genes2 = parent2->Representation();
+    assert(genes1.size() == genes2.size());
 
-    const size_t size = chromosome1.size();
+    const size_t size = genes1.size();
 
     std::mt19937 rng;
     rng.seed(std::random_device()());
@@ -24,10 +24,10 @@ PMXCellPlacementCrossover::Crossover(ChromosomePtr parent1, ChromosomePtr parent
 
     const auto cutPoint = dist(rng);
 
-    std::string offSpring(cutPoint, emptyGene);
-    offSpring += chromosome2.substr(cutPoint + 1);
+    Chromosome::Genes offSpring(cutPoint, emptyGene);
+    offSpring.insert(offSpring.end(), genes2.begin() + cutPoint + 1, genes2.end());
 
-    std::unordered_map<char, size_t> mapping;
+    std::unordered_map<uint64_t, size_t> mapping;
     for (size_t i = cutPoint + 1; i != size; ++i)
     {
         mapping.insert({ offSpring[i], i });
@@ -35,19 +35,19 @@ PMXCellPlacementCrossover::Crossover(ChromosomePtr parent1, ChromosomePtr parent
 
     for (size_t i = 0; i <= cutPoint; ++i)
     {
-        if (mapping.find(chromosome1[i]) == mapping.end())
+        if (mapping.find(genes1[i]) == mapping.end())
         {
-            offSpring[i] = chromosome1[i];
+            offSpring[i] = genes1[i];
         }
         else
         {
-            size_t pos = mapping[chromosome1[i]];
+            size_t pos = mapping[genes1[i]];
             while (true)
             {
-                const auto it = mapping.find(chromosome1[pos]);
+                const auto it = mapping.find(genes1[pos]);
                 if (it == mapping.end())
                 {
-                    offSpring[i] = chromosome1[pos];
+                    offSpring[i] = genes1[pos];
                     break;
                 }
                 else

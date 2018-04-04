@@ -36,6 +36,13 @@ inline void GreedyPopulationGeneticAlgorithm<Params>::InitialGeneration()
     m_greedy.Solve();
 
     auto result = m_greedy.GetResults();
+
+    for (size_t i = 0; i != m_numberOfGenerations; ++i)
+    {
+        std::random_shuffle(std::begin(result), std::end(result));
+
+        m_generation.push_back(std::make_shared<Chromosome>(result));
+    }
 }
 
 template<class Params>

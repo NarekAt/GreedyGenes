@@ -16,7 +16,7 @@ void PairwiseInterchangeMutatation::Mutate(Generation& gen)
     {
         auto ch = gen[i];
 
-        std::string interchange = ch->AsString();
+        auto& interchange = ch->Representation();
 
         assert(interchange.size() > 2);
 
@@ -29,7 +29,7 @@ void PairwiseInterchangeMutatation::Mutate(Generation& gen)
         auto it = std::find_if(gen.begin(), gen.end(),
             [mutant](ChromosomePtr chromosome)
             {
-                return chromosome->AsString() == mutant->AsString();
+                return chromosome->Representation() == mutant->Representation();
             });
 
         if (it == gen.end())

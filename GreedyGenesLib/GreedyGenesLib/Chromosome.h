@@ -1,15 +1,17 @@
 #pragma once
-#include <string>
+#include <vector>
 
 class Chromosome
 {
 public:
-    Chromosome(const std::string& genes)
+    using Genes = std::vector<uint64_t>;
+
+    Chromosome(const Genes& genes)
         : m_fitness(std::numeric_limits<long>::max())
         , m_genes(genes)
     {}
 
-    std::string& AsString() const
+    Genes& Representation() const
     {
         return m_genes;
     }
@@ -27,5 +29,5 @@ public:
 protected:
     long m_fitness;
 
-    mutable std::string m_genes;
+    mutable Genes m_genes;
 };

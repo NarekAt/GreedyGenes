@@ -29,16 +29,16 @@ MinWireLengthCellPlacementFitness::Evaluate(Generation& generation)
 long
 MinWireLengthCellPlacementFitness::GetManhattanDistance(ChromosomePtr ch, size_t i, size_t j)
 {
-    std::string chromStr = ch->AsString();
+    auto& genes = ch->Representation();
 
-    size_t numOfRows = static_cast<size_t>(sqrt(chromStr.size()));
+    size_t numOfRows = static_cast<size_t>(sqrt(genes.size()));
 
     std::pair<size_t, size_t> c1, c2;
 
-    for (size_t k = 0; k != chromStr.size(); ++k)
+    for (size_t k = 0; k != genes.size(); ++k)
     {
         // TODO: refactor code
-        auto chromId = chromStr[k] - 'a';
+        auto chromId = genes[k];
         if (chromId == i)
         {
             c1.first = k / numOfRows;
