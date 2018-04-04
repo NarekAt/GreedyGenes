@@ -38,7 +38,7 @@ inline void IncrementalGeneticAlgorithm<Params>::InitialGeneration()
 template<class Params>
 inline void IncrementalGeneticAlgorithm<Params>::IncrementGenerations()
 {
-    std::sort(m_generation.begin(), m_generation.end(),
+    std::sort(Base::m_generation.begin(), Base::m_generation.end(),
         [](ChromosomePtr ch1, ChromosomePtr ch2)
         {
             return ch1->GetFitness() > ch2->GetFitness();
@@ -47,9 +47,9 @@ inline void IncrementalGeneticAlgorithm<Params>::IncrementGenerations()
     // replace only specified number of chromosomes
     // at the end of each generation,
     // thus allowing majority of chromosomes to survive
-    while (m_numOfChromosomesToReplace && !m_generation.empty())
+    while (m_numOfChromosomesToReplace && !Base::m_generation.empty())
     {
-        m_generation.pop_back();
+        Base::m_generation.pop_back();
 
         --m_numOfChromosomesToReplace;
     }

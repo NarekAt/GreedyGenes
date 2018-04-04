@@ -64,7 +64,7 @@ protected:
     virtual void IncrementGenerations() = 0;
 
 private:
-    auto ChooseParents()
+    std::pair<ChromosomePtr, ChromosomePtr> ChooseParents()
     {
         std::sort(m_generation.begin(), m_generation.end(),
             [](ChromosomePtr ch1, ChromosomePtr ch2)
