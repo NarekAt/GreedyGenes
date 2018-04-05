@@ -25,13 +25,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    additionaloptionswindow.cpp \
+    executewindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    problemsolvingengine.h \
+    additionaloptionswindow.h \
+    executewindow.h \
+    problem.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    additionaloptionswindow.ui \
+    executewindow.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../GreedyGenesLib/release/ -lGreedyGenesLib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../GreedyGenesLib/debug/ -lGreedyGenesLib

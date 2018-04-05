@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
-    <height>375</height>
+    <width>381</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="palette">
@@ -65,17 +65,22 @@
     </property>
     <item>
      <property name="text">
-      <string>problem1</string>
+      <string>VLSI Cell Placement</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>problem2</string>
+      <string>VLSI Floor Planning</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>problem3</string>
+      <string>Min alpha Cluster Cover</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Max k Cluster Cover</string>
      </property>
     </item>
    </widget>
@@ -91,6 +96,8 @@
     <property name="font">
      <font>
       <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
       <underline>true</underline>
      </font>
     </property>
@@ -98,27 +105,19 @@
      <string>Select one of the optimization problems</string>
     </property>
    </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>270</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Next</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>200</y>
+      <y>240</y>
       <width>121</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <italic>true</italic>
+     </font>
     </property>
     <property name="text">
      <string>Input files path</string>
@@ -128,8 +127,8 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>230</y>
-      <width>271</width>
+      <y>270</y>
+      <width>261</width>
       <height>21</height>
      </rect>
     </property>
@@ -137,14 +136,71 @@
    <widget class="QToolButton" name="toolButton">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>230</y>
-      <width>27</width>
-      <height>22</height>
+      <x>310</x>
+      <y>270</y>
+      <width>31</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>...</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="selectMethodComboBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Greedy method (Peeling and other heuiristics)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Genetic method</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Genetic method based on greedily generation of initial population</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Choose a solution technique</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="nextButton">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>320</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next</string>
     </property>
    </widget>
   </widget>
@@ -153,19 +209,23 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>577</width>
-     <height>26</height>
+     <width>381</width>
+     <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
