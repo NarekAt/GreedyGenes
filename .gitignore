@@ -43,3 +43,9 @@
 *.idg
 *.log
 *.idb
+
+# Qt
+*build-App-Desktop_Qt*
+
+# Autosave
+*.autosave
