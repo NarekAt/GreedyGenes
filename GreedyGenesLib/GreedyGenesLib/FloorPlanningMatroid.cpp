@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "FloorPlanningMatroid.h"
 
 bool FloorPlanningMatroid::IsIndependentSubset(FloorPlanningMatroidParams::CollectionType & elems) const

@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <stdint.h>
+#include <limits>
 
 class Chromosome
 {

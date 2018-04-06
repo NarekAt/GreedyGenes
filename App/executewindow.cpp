@@ -17,4 +17,5 @@ void ExecuteWindow::TransferData(Problem* p)
 ExecuteWindow::~ExecuteWindow()
 {
     delete ui;
+
 }

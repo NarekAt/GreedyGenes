@@ -1,6 +1,6 @@
-#include "stdafx.h"
 #include "CellPlacementMaxConSolver.h"
 #include <exception>
+#include <limits>
 
 namespace
 {
@@ -105,7 +105,7 @@ size_t CellPlacementMaxConSolver::SelectSlot(Cell& cell)
         const auto size = m_result.size();
         const auto mid = size / 2;
 
-        for (size_t i = mid, j = mid; i >= 0, j < size; --i, ++j)
+        for (size_t i = mid, j = mid; i >= 0 && j < size; --i, ++j)
         {
             if (m_result[i] == INVALID_SLOT)
                 return i;

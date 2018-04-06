@@ -1,12 +1,10 @@
-#include "stdafx.h"
 #include "MinWireLengthCellPlacementFitness.h"
+#include <cmath>
 
 void
 MinWireLengthCellPlacementFitness::Evaluate(Generation& generation)
 {
     auto& connMatrix = m_problem->GetIndependentSubsets();
-
-    auto minWire = std::numeric_limits<size_t>::max();
 
     for (auto chromosome : generation)
     {
@@ -44,7 +42,7 @@ MinWireLengthCellPlacementFitness::GetManhattanDistance(ChromosomePtr ch, size_t
             c1.first = k / numOfRows;
             c1.second = k % numOfRows;
         }
-        else if (chromId = j)
+        else if (chromId == j)
         {
             c2.first = k / numOfRows;
             c2.second = k % numOfRows;

@@ -96,3 +96,6 @@ protected:
 
     size_t m_numberOfGenerations;
 };
+
+template <class Params>
+using GeneticAlgorithmPtr = std::shared_ptr<GeneticAlgorithm<Params>>;

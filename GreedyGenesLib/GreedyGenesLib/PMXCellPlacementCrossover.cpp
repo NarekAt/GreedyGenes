@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "PMXCellPlacementCrossover.h"
 
 #include <unordered_map>

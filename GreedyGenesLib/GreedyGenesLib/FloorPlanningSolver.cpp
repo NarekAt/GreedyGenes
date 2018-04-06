@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "FloorPlanningSolver.h"
 #include <algorithm>
 
@@ -16,8 +15,6 @@ void FloorPlanningSolver::Solve()
 
     while (!m_order.empty())
     {
-        auto mod = *it;
-
         m_order.erase(it);
         ++it;
         // select a location for mod that will result in

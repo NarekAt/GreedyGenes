@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MinCoverSolver.h"
 #include <iterator>
 #include <algorithm>

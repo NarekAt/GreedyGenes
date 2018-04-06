@@ -27,29 +27,65 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     additionaloptionswindow.cpp \
-    executewindow.cpp
+    executewindow.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/CellPlacementMatroid.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/CellPlacementMaxConSolver.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/ClusterMatroid.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/donotcommit.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/FloorPlanningMatroid.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/FloorPlanningSolver.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithmFactory.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithm.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithmFactory.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/MaxClusterSolver.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/MinCoverSolver.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/MinWireLengthCellPlacementFitness.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/PairwiseInterchangeMutation.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/PMXCellPlacementCrossover.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.cpp
 
 HEADERS += \
         mainwindow.h \
     problemsolvingengine.h \
     additionaloptionswindow.h \
     executewindow.h \
-    problem.h
+    problem.h \
+    ../GreedyGenesLib/GreedyGenesLib/CellPlacementMatroid.h \
+    ../GreedyGenesLib/GreedyGenesLib/CellPlacementMaxConSolver.h \
+    ../GreedyGenesLib/GreedyGenesLib/Chromosome.h \
+    ../GreedyGenesLib/GreedyGenesLib/ClusterMatroid.h \
+    ../GreedyGenesLib/GreedyGenesLib/CrossoverStrategy.h \
+    ../GreedyGenesLib/GreedyGenesLib/FitnessEvaluationStrategy.h \
+    ../GreedyGenesLib/GreedyGenesLib/FloorPlanningMatroid.h \
+    ../GreedyGenesLib/GreedyGenesLib/FloorPlanningSolver.h \
+    ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithm.h \
+    ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithmFactory.h \
+    ../GreedyGenesLib/GreedyGenesLib/GeneticSDK.h \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithm.h \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithmFactory.h \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyPopulationGeneticAlgorithm.h \
+    ../GreedyGenesLib/GreedyGenesLib/GreedySDK.h \
+    ../GreedyGenesLib/GreedyGenesLib/GreedyStrategy.h \
+    ../GreedyGenesLib/GreedyGenesLib/IncrementalGeneticAlgorithm.h \
+    ../GreedyGenesLib/GreedyGenesLib/InversionStrategy.h \
+    ../GreedyGenesLib/GreedyGenesLib/Matroid.h \
+    ../GreedyGenesLib/GreedyGenesLib/MaxClusterSolver.h \
+    ../GreedyGenesLib/GreedyGenesLib/MinCoverSolver.h \
+    ../GreedyGenesLib/GreedyGenesLib/MinWireLengthCellPlacementFitness.h \
+    ../GreedyGenesLib/GreedyGenesLib/MutationStrategy.h \
+    ../GreedyGenesLib/GreedyGenesLib/PairwiseInterchangeMutation.h \
+    ../GreedyGenesLib/GreedyGenesLib/PMXCellPlacementCrossover.h \
+    ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.h \
+    ../GreedyGenesLib/GreedyGenesLib/Types.h
 
 FORMS += \
         mainwindow.ui \
     additionaloptionswindow.ui \
     executewindow.ui
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../GreedyGenesLib/release/ -lGreedyGenesLib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../GreedyGenesLib/debug/ -lGreedyGenesLib
-
 INCLUDEPATH += $$PWD/../GreedyGenesLib/GreedyGenesLib
 DEPENDPATH += $$PWD/../GreedyGenesLib/GreedyGenesLib
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../GreedyGenesLib/release/GreedyGenesLib.lib
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../GreedyGenesLib/debug/GreedyGenesLib.lib
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../GreedyGenesLib/release/GreedyGenesLib.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../GreedyGenesLib/debug/GreedyGenesLib.lib
-
 STATECHARTS +=
+
+CONFIG += c++14 strict_c++

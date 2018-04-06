@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ 
 #include "ClusterMatroid.h"
 
 bool ClusterMatroid::IsIndependentSubset(ClusterMatroidParams::CollectionType& elems) const

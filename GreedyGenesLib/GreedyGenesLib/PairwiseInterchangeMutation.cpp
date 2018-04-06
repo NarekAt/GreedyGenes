@@ -1,7 +1,8 @@
-#include "stdafx.h"
+
 #include "PairwiseInterchangeMutation.h"
 #include <random>
 #include <cassert>
+#include <algorithm>
 
 void PairwiseInterchangeMutatation::Mutate(Generation& gen)
 {

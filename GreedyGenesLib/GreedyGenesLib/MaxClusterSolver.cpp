@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MaxClusterSolver.h"
 
 void MaxClusterSolver::Init(MatroidPtr matroid, ClusterMatroidParams & params)

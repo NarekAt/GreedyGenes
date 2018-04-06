@@ -35,3 +35,6 @@ protected:
     GreedyStrategyPtr<Params> m_greedyStrategy;
     Params m_params;
 };
+
+template <class Params>
+using GreedyAlgorithmPtr = std::shared_ptr<GreedyAlgorithm<Params>>;

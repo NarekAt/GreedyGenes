@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "CellPlacementMatroid.h"
 
 bool CellPlacementMatroid::IsIndependentSubset(CellPlacementMatroidParams::CollectionType & elems) const
