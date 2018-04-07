@@ -5,8 +5,7 @@
 #include <QErrorMessage>
 #include "problem.h"
 #include "enumconverters.h"
-#include "GreedyAlgorithmFactory.h"
-//#include "GeneticAlgorithmFactory.h"
+#include "optimizationsalgorithmfactory.h"
 
 class ProblemSolvingEngine
 {
@@ -40,7 +39,15 @@ public:
             return;
         }
 
-        auto& ga = GreedyAlgorithmFactory::GetInstance();
+        std::map<std::string, std::string> additionalOptions;
+        for (auto it = m_problem->m_greedyAlgOptions.begin(); it != m_problem->m_greedyAlgOptions.end(); ++it)
+        {
+            additionalOptions.insert({ it.key().toStdString(), it.value().toStdString() });
+        }
+        auto algo = OptimizationsAlgorithmFactory::GetInstance().CreateAlgorithm(
+                    prType, m, m_problem->m_inputDir.toStdString(), additionalOptions);
+
+        //algo->Solve();
     }
 
 private:

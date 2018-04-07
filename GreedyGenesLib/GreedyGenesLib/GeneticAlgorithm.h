@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GeneticSDK.h"
+#include "Algorithm.h"
 #include "CrossoverStrategy.h"
 #include "MutationStrategy.h"
 #include "InversionStrategy.h"
@@ -8,7 +9,7 @@
 #include <algorithm>
 
 template <class Params>
-class GeneticAlgorithm
+class GeneticAlgorithm : public IAlgorithm
 {
 public:
     GeneticAlgorithm() = default;
@@ -25,7 +26,7 @@ public:
         , m_numberOfGenerations(numOfGenerations)
     {}
 
-    void Solve()
+    void Solve() override
     {
         InitialGeneration();
 
@@ -46,6 +47,11 @@ public:
 
             IncrementGenerations();
         }
+    }
+
+    std::string StoreResultsInFile() override
+    {
+        return "";
     }
 
     ChromosomePtr GetBestChromosome()

@@ -1,10 +1,22 @@
 #include "FloorPlanningSolver.h"
+#include "FloorPlanningMatroid.h"
 #include <algorithm>
 
-void FloorPlanningSolver::Init(MatroidPtr matroid, FloorPlanningMatroidParams& params)
+FloorPlanningSolver::FloorPlanningSolver(const std::string& fileName, FloorPlanningMatroidParams & params)
+    : m_matroid(std::make_shared<FloorPlanningMatroid>())
+    , m_params(params)
 {
-    m_matroid = matroid;
-    m_params = params;
+    m_matroid->ReadInputDataFromFile(fileName);
+}
+
+FloorPlanningSolver::MatroidPtr FloorPlanningSolver::GetProblemMatroid()
+{
+    return m_matroid;
+}
+
+FloorPlanningMatroidParams & FloorPlanningSolver::GetParams()
+{
+    return m_params;
 }
 
 void FloorPlanningSolver::Solve()

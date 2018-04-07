@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm.h" />
     <ClInclude Include="CellPlacementMatroid.h" />
     <ClInclude Include="CellPlacementMaxConSolver.h" />
     <ClInclude Include="CrossoverStrategy.h" />
@@ -151,10 +152,8 @@
     <ClInclude Include="Chromosome.h" />
     <ClInclude Include="GeneticAlgorithm.h" />
     <ClInclude Include="ClusterMatroid.h" />
-    <ClInclude Include="GeneticAlgorithmFactory.h" />
     <ClInclude Include="GeneticSDK.h" />
     <ClInclude Include="GreedyAlgorithm.h" />
-    <ClInclude Include="GreedyAlgorithmFactory.h" />
     <ClInclude Include="GreedyPopulationGeneticAlgorithm.h" />
     <ClInclude Include="GreedySDK.h" />
     <ClInclude Include="GreedyStrategy.h" />
@@ -165,6 +164,7 @@
     <ClInclude Include="MinCoverSolver.h" />
     <ClInclude Include="MinWireLengthCellPlacementFitness.h" />
     <ClInclude Include="MutationStrategy.h" />
+    <ClInclude Include="optimizationsalgorithmfactory.h" />
     <ClInclude Include="PairwiseInterchangeMutation.h" />
     <ClInclude Include="PMXCellPlacementCrossover.h" />
     <ClInclude Include="FloorPlanningMatroid.h" />
@@ -177,12 +177,11 @@
     <ClCompile Include="ClusterMatroid.cpp" />
     <ClCompile Include="FloorPlanningMatroid.cpp" />
     <ClCompile Include="FloorPlanningSolver.cpp" />
-    <ClCompile Include="GeneticAlgorithmFactory.cpp" />
     <ClCompile Include="GreedyAlgorithm.cpp" />
-    <ClCompile Include="GreedyAlgorithmFactory.cpp" />
     <ClCompile Include="MaxClusterSolver.cpp" />
     <ClCompile Include="MinCoverSolver.cpp" />
     <ClCompile Include="MinWireLengthCellPlacementFitness.cpp" />
+    <ClCompile Include="optimizationsalgorithmfactory.cpp" />
     <ClCompile Include="PairwiseInterchangeMutation.cpp" />
     <ClCompile Include="PMXCellPlacementCrossover.cpp" />
     <ClCompile Include="TwoPointInversion.cpp" />

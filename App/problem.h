@@ -21,8 +21,8 @@ struct Problem
     QString m_method;
     QString m_inputDir;
 
-    QMap<QString, QVariant> m_geneticAlgOptions;
-    QMap<QString, QVariant> m_greedyAlgOptions;
+    QMap<QString, QString> m_geneticAlgOptions;
+    QMap<QString, QString> m_greedyAlgOptions;
 };
 
 #endif // PROBLEM_H

@@ -8,6 +8,8 @@ template <class Params>
 class IMatroid
 {
 public:
+    virtual void ReadInputDataFromFile(const std::string& filePath) = 0;
+
     virtual bool IsIndependentSubset(typename Params::CollectionType& elems) const = 0;
 
     virtual typename Params::CollectionType& GetGroundElements() const = 0;

@@ -31,18 +31,16 @@ SOURCES += \
     ../GreedyGenesLib/GreedyGenesLib/CellPlacementMatroid.cpp \
     ../GreedyGenesLib/GreedyGenesLib/CellPlacementMaxConSolver.cpp \
     ../GreedyGenesLib/GreedyGenesLib/ClusterMatroid.cpp \
-    ../GreedyGenesLib/GreedyGenesLib/donotcommit.cpp \
     ../GreedyGenesLib/GreedyGenesLib/FloorPlanningMatroid.cpp \
     ../GreedyGenesLib/GreedyGenesLib/FloorPlanningSolver.cpp \
-    ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithmFactory.cpp \
     ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithm.cpp \
-    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithmFactory.cpp \
     ../GreedyGenesLib/GreedyGenesLib/MaxClusterSolver.cpp \
     ../GreedyGenesLib/GreedyGenesLib/MinCoverSolver.cpp \
     ../GreedyGenesLib/GreedyGenesLib/MinWireLengthCellPlacementFitness.cpp \
     ../GreedyGenesLib/GreedyGenesLib/PairwiseInterchangeMutation.cpp \
     ../GreedyGenesLib/GreedyGenesLib/PMXCellPlacementCrossover.cpp \
-    ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.cpp
+    ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/optimizationsalgorithmfactory.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -59,10 +57,8 @@ HEADERS += \
     ../GreedyGenesLib/GreedyGenesLib/FloorPlanningMatroid.h \
     ../GreedyGenesLib/GreedyGenesLib/FloorPlanningSolver.h \
     ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithm.h \
-    ../GreedyGenesLib/GreedyGenesLib/GeneticAlgorithmFactory.h \
     ../GreedyGenesLib/GreedyGenesLib/GeneticSDK.h \
     ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithm.h \
-    ../GreedyGenesLib/GreedyGenesLib/GreedyAlgorithmFactory.h \
     ../GreedyGenesLib/GreedyGenesLib/GreedyPopulationGeneticAlgorithm.h \
     ../GreedyGenesLib/GreedyGenesLib/GreedySDK.h \
     ../GreedyGenesLib/GreedyGenesLib/GreedyStrategy.h \
@@ -76,7 +72,10 @@ HEADERS += \
     ../GreedyGenesLib/GreedyGenesLib/PairwiseInterchangeMutation.h \
     ../GreedyGenesLib/GreedyGenesLib/PMXCellPlacementCrossover.h \
     ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.h \
-    ../GreedyGenesLib/GreedyGenesLib/Types.h
+    ../GreedyGenesLib/GreedyGenesLib/Types.h \
+    ../GreedyGenesLib/GreedyGenesLib/optimizationsalgorithmfactory.h \
+    ../GreedyGenesLib/GreedyGenesLib/Algorithm.h
+
 
 FORMS += \
         mainwindow.ui \

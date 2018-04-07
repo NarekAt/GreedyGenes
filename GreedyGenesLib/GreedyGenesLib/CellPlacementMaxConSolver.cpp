@@ -1,4 +1,5 @@
 #include "CellPlacementMaxConSolver.h"
+#include "CellPlacementMatroid.h"
 #include <exception>
 #include <limits>
 
@@ -7,10 +8,21 @@ namespace
     constexpr auto INVALID_SLOT = std::numeric_limits<size_t>::max();
 }
 
-void CellPlacementMaxConSolver::Init(MatroidPtr matroid, CellPlacementMatroidParams& params)
+CellPlacementMaxConSolver::CellPlacementMaxConSolver(const std::string& fileName, CellPlacementMatroidParams & params)
+    : m_matroid(std::make_shared<CellPlacementMatroid>())
+    , m_params(params)
 {
-    m_matroid = matroid;
-    m_params = params;
+    m_matroid->ReadInputDataFromFile(fileName);
+}
+
+CellPlacementMaxConSolver::MatroidPtr CellPlacementMaxConSolver::GetProblemMatroid()
+{
+    return m_matroid;
+}
+
+CellPlacementMatroidParams& CellPlacementMaxConSolver::GetParams()
+{
+    return m_params;
 }
 
 void CellPlacementMaxConSolver::Solve()

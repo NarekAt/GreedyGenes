@@ -2,11 +2,14 @@
 #include "GreedySDK.h"
 #include "GreedyStrategy.h"
 
-
 class CellPlacementMaxConSolver : public GreedyStrategy<CellPlacementMatroidParams>
 {
 public:
-    void Init(MatroidPtr matroid, CellPlacementMatroidParams& params) override;
+    CellPlacementMaxConSolver(const std::string& fileName, CellPlacementMatroidParams& params);
+
+    MatroidPtr GetProblemMatroid() override;
+
+    CellPlacementMatroidParams& GetParams() override;
 
     void Solve() override;
 

@@ -6,7 +6,11 @@
 class MaxClusterSolver : public GreedyStrategy<ClusterMatroidParams>
 {
 public:
-    void Init(MatroidPtr matroid, ClusterMatroidParams& params) override;
+    MaxClusterSolver(const std::string& fileName, ClusterMatroidParams& params);
+
+    MatroidPtr GetProblemMatroid() override;
+
+    ClusterMatroidParams& GetParams() override;
 
     void Solve() override;
 

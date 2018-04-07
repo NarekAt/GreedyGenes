@@ -96,10 +96,10 @@
     <ClInclude Include="GreedyPopulationGeneticAlgorithm.h">
       <Filter>Header Files\genetic</Filter>
     </ClInclude>
-    <ClInclude Include="GeneticAlgorithmFactory.h">
+    <ClInclude Include="Algorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GreedyAlgorithmFactory.h">
+    <ClInclude Include="optimizationsalgorithmfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -140,11 +140,8 @@
     <ClCompile Include="TwoPointInversion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GreedyAlgorithmFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneticAlgorithmFactory.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="optimizationsalgorithmfactory.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -6,7 +6,11 @@
 class MinCoverSolver : public GreedyStrategy<ClusterMatroidParams>
 {
 public:
-    void Init(MatroidPtr matroid, ClusterMatroidParams& params) override;
+    MinCoverSolver(const std::string& fileName, ClusterMatroidParams& params);
+
+    MatroidPtr GetProblemMatroid() override;
+
+    ClusterMatroidParams& GetParams() override;
 
     void Solve() override;
 

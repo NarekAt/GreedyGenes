@@ -24,9 +24,9 @@ void AdditionalOptionsWindow::TransferData(Problem* p)
 
 void AdditionalOptionsWindow::on_commandLinkButton_clicked()
 {
-    problem->m_geneticAlgOptions.insert("Mutation Rate", ui->mutationRate->value());
-    problem->m_geneticAlgOptions.insert("Inversion Rate", ui->inversionRate->value());
-    problem->m_geneticAlgOptions.insert("Num of Generation", ui->numOfGenerations->value());
+    problem->m_geneticAlgOptions.insert("Mutation Rate", QString::number(ui->mutationRate->value()));
+    problem->m_geneticAlgOptions.insert("Inversion Rate", QString::number(ui->inversionRate->value()));
+    problem->m_geneticAlgOptions.insert("Num of Generation", QString::number(ui->numOfGenerations->value()));
 
     execWin->TransferData(problem);
 

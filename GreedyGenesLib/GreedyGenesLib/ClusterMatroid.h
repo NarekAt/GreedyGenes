@@ -5,6 +5,8 @@
 class ClusterMatroid : public IMatroid<ClusterMatroidParams>
 {
 public:
+    void ReadInputDataFromFile(const std::string& filePath) override;
+
     bool IsIndependentSubset(ClusterMatroidParams::CollectionType& elems) const override;
 
     ClusterMatroidParams::CollectionType& GetGroundElements() const override;

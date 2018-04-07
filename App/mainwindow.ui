@@ -89,7 +89,7 @@
      <rect>
       <x>40</x>
       <y>50</y>
-      <width>261</width>
+      <width>301</width>
       <height>16</height>
      </rect>
     </property>
@@ -120,7 +120,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Input files path</string>
+     <string>Input file path</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="filePath">

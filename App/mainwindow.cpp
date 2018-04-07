@@ -21,9 +21,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_toolButton_clicked()
 {
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Select Path"));
+    const QString path = QFileDialog::getOpenFileName(this, tr("Select an input file"));
 
-    ui->filePath->setText(dir);
+    ui->filePath->setText(path);
 }
 
 void MainWindow::on_nextButton_clicked()

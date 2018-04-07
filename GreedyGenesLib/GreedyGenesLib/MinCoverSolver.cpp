@@ -1,11 +1,23 @@
 #include "MinCoverSolver.h"
+#include "ClusterMatroid.h"
 #include <iterator>
 #include <algorithm>
 
-void MinCoverSolver::Init(MatroidPtr matroid, ClusterMatroidParams& params)
+MinCoverSolver::MinCoverSolver(const std::string& fileName, ClusterMatroidParams& params)
+    : m_matroid(std::make_shared<ClusterMatroid>())
+    , m_params(params)
 {
-    m_matroid = matroid;
-    m_params = params;
+    m_matroid->ReadInputDataFromFile(fileName);
+}
+
+MinCoverSolver::MatroidPtr MinCoverSolver::GetProblemMatroid()
+{
+    return m_matroid;
+}
+
+ClusterMatroidParams& MinCoverSolver::GetParams()
+{
+    return m_params;
 }
 
 void MinCoverSolver::Solve()

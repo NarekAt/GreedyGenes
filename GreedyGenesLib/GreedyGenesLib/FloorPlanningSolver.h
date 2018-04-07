@@ -7,7 +7,11 @@
 class FloorPlanningSolver : public GreedyStrategy<FloorPlanningMatroidParams>
 {
 public:
-    void Init(MatroidPtr matroid, FloorPlanningMatroidParams& params) override;
+    FloorPlanningSolver(const std::string& inputFile, FloorPlanningMatroidParams& params);
+
+    MatroidPtr GetProblemMatroid() override;
+
+    FloorPlanningMatroidParams& GetParams() override;
 
     void Solve() override;
 

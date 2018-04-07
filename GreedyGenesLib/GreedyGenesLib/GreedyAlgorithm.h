@@ -1,33 +1,32 @@
 #pragma once
 
 #include "GreedySDK.h"
+#include "Algorithm.h"
 #include "Matroid.h"
 #include "GreedyStrategy.h"
 
 #include <memory>
 
 template <class Params>
-class GreedyAlgorithm
+class GreedyAlgorithm : public IAlgorithm
 {
 public:
-    GreedyAlgorithm(IMatroidPtr<Params> matroid, GreedyStrategyPtr<Params> strategy, Params& params)
-        : m_matroid(matroid)
+    GreedyAlgorithm(GreedyStrategyPtr<Params> strategy)
+        : m_matroid(strategy->GetProblemMatroid())
         , m_greedyStrategy(strategy)
-        , m_params(params)
+        , m_params(strategy->GetParams())
     {}
 
     GreedyAlgorithm() = default;
 
-    void Solve()
+    void Solve() override
     {
-        m_greedyStrategy->Init(m_matroid, m_params);
-
         m_greedyStrategy->Solve();
     }
 
-    typename Params::ResultType GetResults()
+    std::string StoreResultsInFile() override
     {
-        return m_greedyStrategy->GetResults();
+        return "";
     }
 
 protected:

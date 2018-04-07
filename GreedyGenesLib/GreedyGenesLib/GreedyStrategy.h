@@ -9,7 +9,9 @@ class GreedyStrategy
 public:
     using MatroidPtr = IMatroidPtr<Params>;
 
-    virtual void Init(MatroidPtr matroid, Params& params) = 0;
+    virtual MatroidPtr GetProblemMatroid() = 0;
+
+    virtual Params& GetParams() = 0;
 
     virtual void Solve() = 0;
 

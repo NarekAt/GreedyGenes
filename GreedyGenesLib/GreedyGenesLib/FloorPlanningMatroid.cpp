@@ -1,5 +1,9 @@
 #include "FloorPlanningMatroid.h"
 
+void FloorPlanningMatroid::ReadInputDataFromFile(const std::string & filePath)
+{
+}
+
 bool FloorPlanningMatroid::IsIndependentSubset(FloorPlanningMatroidParams::CollectionType & elems) const
 {
     return false;

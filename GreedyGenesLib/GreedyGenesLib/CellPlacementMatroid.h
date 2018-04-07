@@ -5,6 +5,8 @@
 class CellPlacementMatroid : public IMatroid<CellPlacementMatroidParams>
 {
 public:
+    void ReadInputDataFromFile(const std::string& filePath) override;
+
     bool IsIndependentSubset(CellPlacementMatroidParams::CollectionType& elems) const override;
 
     CellPlacementMatroidParams::CollectionType& GetGroundElements() const override;
