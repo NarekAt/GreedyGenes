@@ -12,7 +12,7 @@ public:
     GreedyPopulationGeneticAlgorithm(CrossoverStrategyPtr crossover,
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
-        FitnessEvaluationStrategyPtr<Params> fitness,
+        FitnessEvaluationStrategyPtr fitness,
         size_t numOfGenerations,
         size_t numOfChromosomesToReplace)
         : Base(crossover, mutation, inversion, fitness, numOfGenerations, numOfChromosomesToReplace)

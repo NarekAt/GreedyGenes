@@ -96,7 +96,7 @@ protected:
     CrossoverStrategyPtr         m_crossover;
     MutatationStrategyPtr        m_mutation;
     InversionStrategyPtr         m_inversion;
-    FitnessEvaluationStrategyPtr<Params> m_fitness;
+    FitnessEvaluationStrategyPtr m_fitness;
 
     Generation m_generation;
 
