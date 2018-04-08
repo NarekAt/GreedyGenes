@@ -35,6 +35,10 @@ private:
     AlgorithmPtr InstantiateGeneticAlgorithm(ProblemType problemType,
         const std::string& inputFilePath,
         const std::map<std::string, std::string>& additionalOptions);
+
+    AlgorithmPtr InstantiateGreedyGeneticAlgorithm(ProblemType problemType,
+        const std::string& inputFilePath,
+        const std::map<std::string, std::string>& additionalOptions);
 };
 
 #endif // OPTIMIZATIONSALGORITHMFACTORY_H

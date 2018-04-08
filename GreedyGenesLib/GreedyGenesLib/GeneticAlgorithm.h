@@ -17,7 +17,7 @@ public:
     GeneticAlgorithm(CrossoverStrategyPtr crossover,
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
-        FitnessEvaluationStrategyPtr<Params> fitness,
+        FitnessEvaluationStrategyPtr fitness,
         size_t numOfGenerations)
         : m_crossover(crossover)
         , m_mutation(mutation)
