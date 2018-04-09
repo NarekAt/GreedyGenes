@@ -11,11 +11,14 @@ ExecuteWindow::ExecuteWindow(QWidget *parent) :
 void ExecuteWindow::TransferData(Problem* p)
 {
     problemSolver = new ProblemSolvingEngine(p);
-    problemSolver->Solve();
 }
 
 ExecuteWindow::~ExecuteWindow()
 {
     delete ui;
+}
 
+void ExecuteWindow::on_solveButton_clicked()
+{
+    problemSolver->Solve();
 }

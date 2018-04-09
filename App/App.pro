@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += concurrent widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -83,8 +84,12 @@ FORMS += \
     executewindow.ui
 
 INCLUDEPATH += $$PWD/../GreedyGenesLib/GreedyGenesLib
+INCLUDEPATH += $$PWD/../../rapidjson/include
+
 DEPENDPATH += $$PWD/../GreedyGenesLib/GreedyGenesLib
 
 STATECHARTS +=
+
+target.path = $$[QT_INSTALL_EXAMPLES]/qtconcurrent/progressdialog
 
 CONFIG += c++14 strict_c++

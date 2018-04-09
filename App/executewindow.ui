@@ -6,50 +6,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>364</width>
-    <height>225</height>
+    <width>268</width>
+    <height>164</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Execute</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QProgressBar" name="progressBar">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>341</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>40</x>
       <y>30</y>
-      <width>71</width>
+      <width>141</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="text">
-     <string>Solving...</string>
+     <string>Choose an action</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="resultsButton">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>130</y>
+      <x>140</x>
+      <y>70</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -58,13 +48,26 @@
      <string>View Results</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="solveButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Solve</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>364</width>
+     <width>268</width>
      <height>21</height>
     </rect>
    </property>

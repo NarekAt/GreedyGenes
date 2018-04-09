@@ -19,6 +19,9 @@ public:
 
     void TransferData(Problem* p);
 
+private slots:
+  void on_solveButton_clicked();
+
 private:
     Ui::ExecuteWindow *ui;
 
