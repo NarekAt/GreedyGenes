@@ -36,7 +36,7 @@ struct Cell
     size_t id;
 
     long height;
-    long weight;
+    long width;
 };
 
 

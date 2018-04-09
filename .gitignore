@@ -49,3 +49,6 @@
 
 # Autosave
 *.autosave
+
+# Packages
+*cpprestsdk*
