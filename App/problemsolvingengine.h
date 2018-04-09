@@ -17,25 +17,14 @@ public:
     ProblemSolvingEngine(Problem* p)
         : m_problem(p)
         , m_errMsg(new QErrorMessage())
-        , m_progressDialog(new QProgressDialog())
     {
         m_errMsg->setWindowFlags(Qt::WindowStaysOnTopHint);
-
-        m_progressDialog->setWindowFlags(Qt::WindowStaysOnTopHint);
-
-        m_progressDialog->setLabelText(QString("Progressing using %1 thread(s)...").arg(QThread::idealThreadCount()));
-
-        QObject::connect(&m_futureWatcher, &QFutureWatcher<void>::finished, m_progressDialog, &QProgressDialog::reset);
-        QObject::connect(m_progressDialog, &QProgressDialog::canceled, &m_futureWatcher, &QFutureWatcher<void>::cancel);
-        QObject::connect(&m_futureWatcher,  &QFutureWatcher<void>::progressRangeChanged, m_progressDialog, &QProgressDialog::setRange);
-        QObject::connect(&m_futureWatcher, &QFutureWatcher<void>::progressValueChanged,  m_progressDialog, &QProgressDialog::setValue);
     }
 
     ~ProblemSolvingEngine()
     {
         delete m_problem;
         delete m_errMsg;
-        delete m_progressDialog;
     }
 
     void Solve()
@@ -67,29 +56,12 @@ public:
             // TODO: error handling
             return;
         }
-        QVector<int> vector;
-        for (int i = 0; i < 20; ++i)
-            vector.append(i);
-
-        std::function<void(int&)> spin = [algo](int &iteration)
-        {
-            algo->Solve();
-
-            qDebug() << "iteration" << iteration << "in thread" << QThread::currentThreadId();
-        };
-
-        m_futureWatcher.setFuture(QtConcurrent::map(vector, spin));
-
-        m_progressDialog->exec();
-        m_futureWatcher.waitForFinished();
+        algo->Solve();
     }
 
 private:
     Problem* m_problem;
     QErrorMessage* m_errMsg;
-    QProgressDialog* m_progressDialog;
-
-    QFutureWatcher<void> m_futureWatcher;
 };
 
 #endif // PROBLEMSOLVINGENGINE_H

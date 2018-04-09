@@ -21,4 +21,6 @@ ExecuteWindow::~ExecuteWindow()
 void ExecuteWindow::on_solveButton_clicked()
 {
     problemSolver->Solve();
+
+    ui->resultsButton->setEnabled(true);
 }
