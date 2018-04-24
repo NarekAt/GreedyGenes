@@ -63,3 +63,14 @@ struct CellPlacementMatroidParams
 
     CellPlacementCriteria coast;
 };
+
+
+#include "tsp.h"
+
+struct TSPMatroidParams
+{
+    // vertices
+    using CollectionType = std::vector<int>;
+    using SubSetsSet = Graph;
+    using ResultType = std::vector<uint64_t>;
+};

@@ -41,7 +41,10 @@ SOURCES += \
     ../GreedyGenesLib/GreedyGenesLib/PairwiseInterchangeMutation.cpp \
     ../GreedyGenesLib/GreedyGenesLib/PMXCellPlacementCrossover.cpp \
     ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.cpp \
-    ../GreedyGenesLib/GreedyGenesLib/optimizationsalgorithmfactory.cpp
+    ../GreedyGenesLib/GreedyGenesLib/optimizationsalgorithmfactory.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/tspgraph.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/tsp.cpp \
+    ../GreedyGenesLib/GreedyGenesLib/tspmatroid.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -75,8 +78,10 @@ HEADERS += \
     ../GreedyGenesLib/GreedyGenesLib/TwoPointInversion.h \
     ../GreedyGenesLib/GreedyGenesLib/Types.h \
     ../GreedyGenesLib/GreedyGenesLib/optimizationsalgorithmfactory.h \
-    ../GreedyGenesLib/GreedyGenesLib/Algorithm.h
-
+    ../GreedyGenesLib/GreedyGenesLib/Algorithm.h \
+    ../GreedyGenesLib/GreedyGenesLib/tspgraph.h \
+    ../GreedyGenesLib/GreedyGenesLib/tsp.h \
+    ../GreedyGenesLib/GreedyGenesLib/tspmatroid.h
 
 FORMS += \
         mainwindow.ui \

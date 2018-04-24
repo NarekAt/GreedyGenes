@@ -24,6 +24,11 @@ public:
         m_greedyStrategy->Solve();
     }
 
+    virtual typename Params::ResultType GetResults()
+    {
+        return m_greedyStrategy->GetResults();
+    }
+
     std::string StoreResultsInFile() override
     {
         return "";

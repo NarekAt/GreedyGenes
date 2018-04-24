@@ -20,6 +20,7 @@ enum class ProblemType
     VLSI_FLOOR_PLANNING,
     ALPHA_CLUSTER_COVER,
     K_CLUSTER_COVER,
+    TRAVELING_SALESMAN
 };
 
 enum class Method

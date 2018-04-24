@@ -48,6 +48,11 @@ public:
         {
             additionalOptions.insert({ it.key().toStdString(), it.value().toStdString() });
         }
+        for (auto it = m_problem->m_geneticAlgOptions.begin(); it != m_problem->m_geneticAlgOptions.end(); ++it)
+        {
+            additionalOptions.insert({ it.key().toStdString(), it.value().toStdString() });
+        }
+
         auto algo = OptimizationsAlgorithmFactory::GetInstance().CreateAlgorithm(
                     prType, m, m_problem->m_inputDir.toStdString(), additionalOptions);
 

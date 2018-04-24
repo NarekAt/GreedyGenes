@@ -33,6 +33,7 @@ private:
 template<class Params>
 inline void IncrementalGeneticAlgorithm<Params>::InitialGeneration()
 {
+    // Random population
 }
 
 template<class Params>

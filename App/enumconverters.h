@@ -17,7 +17,8 @@ public:
             { "VLSI Cell Placement", ProblemType::VLSI_CELL_PLACEMENT },
             { "VLSI Floor Planning", ProblemType::VLSI_FLOOR_PLANNING },
             { "Min alpha Cluster Cover", ProblemType::ALPHA_CLUSTER_COVER },
-            { "Max k Cluster Cover", ProblemType::ALPHA_CLUSTER_COVER }
+            { "Max k Cluster Cover", ProblemType::ALPHA_CLUSTER_COVER },
+            { "Traveling Salesman", ProblemType::TRAVELING_SALESMAN }
         };
 
         // TODO: Move this part to a templated function to avoid code duplication.
