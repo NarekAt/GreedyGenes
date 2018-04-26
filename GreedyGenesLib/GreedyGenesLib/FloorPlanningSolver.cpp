@@ -39,6 +39,13 @@ FloorPlanningMatroidParams::ResultType FloorPlanningSolver::GetResults()
     return FloorPlanningMatroidParams::ResultType();
 }
 
+std::string FloorPlanningSolver::StoreResults()
+{
+    std::string fileName = "floor_planning.out";
+
+    return fileName;
+}
+
 void FloorPlanningSolver::LinearOrder()
 {
     auto& modules = m_matroid->GetGroundElements();

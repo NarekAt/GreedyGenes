@@ -24,3 +24,10 @@ void ExecuteWindow::on_solveButton_clicked()
 
     ui->resultsButton->setEnabled(true);
 }
+
+void ExecuteWindow::on_resultsButton_clicked()
+{
+    auto file = problemSolver->GetResultFile();
+
+    QDesktopServices::openUrl(QUrl(QDir::currentPath() + "/" + file));
+}

@@ -26,3 +26,9 @@ ClusterMatroidParams::ResultType MaxClusterSolver::GetResults()
 {
     return ClusterMatroidParams::ResultType();
 }
+
+std::string MaxClusterSolver::StoreResults()
+{
+    std::string fileName = "max_cluster.out";
+    return fileName;
+}

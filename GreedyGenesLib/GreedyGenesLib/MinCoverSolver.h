@@ -16,6 +16,8 @@ public:
 
     ClusterMatroidParams::ResultType GetResults() override;
 
+    std::string StoreResults() override;
+
 private:
     void Prepare();
 

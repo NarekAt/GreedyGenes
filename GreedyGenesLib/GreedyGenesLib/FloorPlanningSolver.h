@@ -17,6 +17,8 @@ public:
 
     FloorPlanningMatroidParams::ResultType GetResults() override;
 
+    std::string StoreResults() override;
+
 private:
     // Helpers
     void LinearOrder();

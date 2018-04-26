@@ -31,7 +31,7 @@ public:
 
     std::string StoreResultsInFile() override
     {
-        return "";
+        return m_greedyStrategy->StoreResults();
     }
 
 protected:

@@ -27,6 +27,11 @@ public:
         delete m_errMsg;
     }
 
+    QString GetResultFile()
+    {
+        return m_resultFile;
+    }
+
     void Solve()
     {
         ProblemType prType;
@@ -61,12 +66,15 @@ public:
             // TODO: error handling
             return;
         }
+
         algo->Solve();
+        m_resultFile = QString(algo->StoreResultsInFile().c_str());
     }
 
 private:
     Problem* m_problem;
     QErrorMessage* m_errMsg;
+    QString m_resultFile;
 };
 
 #endif // PROBLEMSOLVINGENGINE_H

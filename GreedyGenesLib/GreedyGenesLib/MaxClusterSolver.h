@@ -16,6 +16,8 @@ public:
 
     ClusterMatroidParams::ResultType GetResults() override;
 
+    std::string StoreResults() override;
+
 private:
     MatroidPtr m_matroid;
     ClusterMatroidParams m_params;

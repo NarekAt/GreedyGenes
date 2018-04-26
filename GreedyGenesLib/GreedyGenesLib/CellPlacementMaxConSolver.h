@@ -15,6 +15,8 @@ public:
 
     CellPlacementMatroidParams::ResultType GetResults() override;
 
+    std::string StoreResults() override;
+
 private:
     Cell SeedCell();
     Cell SelectCell(const CellPlacementMatroidParams::ResultType& layout);

@@ -22,6 +22,8 @@ public:
 private slots:
   void on_solveButton_clicked();
 
+  void on_resultsButton_clicked();
+
 private:
     Ui::ExecuteWindow *ui;
 

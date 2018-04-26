@@ -79,6 +79,12 @@ ClusterMatroidParams::ResultType MinCoverSolver::GetResults()
     return ClusterMatroidParams::ResultType({ m_clusterCover, m_maxWeight });
 }
 
+std::string MinCoverSolver::StoreResults()
+{
+    std::string fileName = "min_cover.out";
+    return fileName;
+}
+
 void MinCoverSolver::Prepare()
 {
     m_clusterCover.clear();
