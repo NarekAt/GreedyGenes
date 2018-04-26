@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm> // sort, next_permutation
 #include "tsp.h"
+#include <fstream>
 using namespace std;
 
 
@@ -517,12 +518,16 @@ void Genetic::run()
 	if(show_population == true)
 		showPopulation(); // shows the population
 	
-	cout << "\nBest solution: ";
+    std::ofstream out;
+    out.open("tsp.out");
+
+    out << "TRAVELING SALESMAN" << "\n";
+    out << "\nBest solution: ";
 	const vector<int>& vec = population[0].first;
 	for(int i = 0; i < graph->V; i++)
-		cout << vec[i] << " ";
-	cout << graph->initial_vertex;
-	cout << " | Cost: " << population[0].second;
+        out << vec[i] << " ";
+    out << graph->initial_vertex;
+    out << "\nCost: " << population[0].second;
 }
 
 

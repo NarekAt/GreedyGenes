@@ -32,14 +32,19 @@ public:
         return m_resultFile;
     }
 
+    ProblemType GetProblemType()
+    {
+        return m_prType;
+    }
+
     void Solve()
     {
-        ProblemType prType;
-        if (!EnumConverter::FromString(m_problem->m_problem, prType))
+        if (!EnumConverter::FromString(m_problem->m_problem, m_prType))
         {
             m_errMsg->showMessage("Invalid type of problem to solve", "Input error");
             return;
         }
+
 
         Method m;
         if (!EnumConverter::FromString(m_problem->m_method, m))
@@ -59,7 +64,7 @@ public:
         }
 
         auto algo = OptimizationsAlgorithmFactory::GetInstance().CreateAlgorithm(
-                    prType, m, m_problem->m_inputDir.toStdString(), additionalOptions);
+                    m_prType, m, m_problem->m_inputDir.toStdString(), additionalOptions);
 
         if (algo == nullptr)
         {
@@ -75,6 +80,8 @@ private:
     Problem* m_problem;
     QErrorMessage* m_errMsg;
     QString m_resultFile;
+
+    ProblemType m_prType;
 };
 
 #endif // PROBLEMSOLVINGENGINE_H

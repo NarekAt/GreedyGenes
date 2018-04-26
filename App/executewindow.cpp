@@ -29,5 +29,11 @@ void ExecuteWindow::on_resultsButton_clicked()
 {
     auto file = problemSolver->GetResultFile();
 
+    // FIXME: Temp hack
+    if (problemSolver->GetProblemType() == ProblemType::TRAVELING_SALESMAN)
+    {
+        file = "tsp.out";
+    }
+
     QDesktopServices::openUrl(QUrl(QDir::currentPath() + "/" + file));
 }
