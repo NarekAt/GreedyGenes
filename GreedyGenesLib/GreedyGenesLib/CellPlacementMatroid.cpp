@@ -53,6 +53,7 @@ void CellPlacementMatroid::ReadInputDataFromFile(const std::string& filePath)
         assert(in < cells.Size() && out < cells.Size());
 
         m_connMatrix[in][out] = weight;
+        m_connMatrix[out][in] = weight;
     }
 }
 

@@ -27,4 +27,5 @@ private:
     CellPlacementMatroidParams m_params;
 
     CellPlacementMatroidParams::ResultType m_result;
+    std::vector<bool> m_placed;
 };

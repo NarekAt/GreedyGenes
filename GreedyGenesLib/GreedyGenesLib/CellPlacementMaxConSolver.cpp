@@ -35,18 +35,21 @@ void CellPlacementMaxConSolver::Solve()
 
     // Initialize slots with empty values
     m_result.resize(cells.size(), INVALID_SLOT);
+    m_placed.resize(cells.size(), false);
 
     auto seedCell = SeedCell();
 
     // Place the Seed cell in the center
-    m_result[seedCell.id] = cells.size() / 2;
+    m_result[cells.size() / 2] = seedCell.id;
+    m_placed[seedCell.id] = true;
 
-    for (auto& cell : cells)
+    for (size_t i = 0; i < cells.size() - 1; ++i)
     {
         auto sc = SelectCell(m_result);
         auto ss = SelectSlot(sc);
 
-        m_result[sc.id] = ss;
+        m_result[ss] = sc.id;
+        m_placed[sc.id] = true;
     }
 }
 
@@ -110,6 +113,7 @@ Cell CellPlacementMaxConSolver::SeedCell()
 Cell CellPlacementMaxConSolver::SelectCell(const CellPlacementMatroidParams::ResultType& layout)
 {
     Cell maxCell = {};
+    maxCell.id = INVALID_SLOT;
 
     const auto& connMatrix = m_matroid->GetIndependentSubsets();
 
@@ -119,9 +123,14 @@ Cell CellPlacementMaxConSolver::SelectCell(const CellPlacementMatroidParams::Res
     {
         size_t connections = 0;
 
+        if (m_placed[i])
+        {
+            continue;
+        }
+
         for (size_t j = 0; j != connMatrix[i].size(); ++j)
         {
-            if (layout[j] == INVALID_SLOT)
+            if (!m_placed[j])
                 continue;
 
             connections += connMatrix[i][j];
@@ -131,6 +140,18 @@ Cell CellPlacementMaxConSolver::SelectCell(const CellPlacementMatroidParams::Res
         {
             maxCon = connections;
             maxCell.id = i;
+        }
+    }
+    if (maxCell.id == INVALID_SLOT)
+    {
+        for (size_t i = 0; i != m_placed.size(); ++i)
+        {
+            if (!m_placed[i])
+            {
+                maxCell.id = i;
+                m_placed[i] = true;
+                break;
+            }
         }
     }
     return maxCell;
