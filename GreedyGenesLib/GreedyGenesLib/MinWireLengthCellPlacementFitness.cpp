@@ -12,7 +12,7 @@ MinWireLengthCellPlacementFitness::Evaluate(Generation& generation)
         // Iterate over all the nets
         for (size_t i = 0; i != connMatrix.size(); ++i)
         {
-            for (size_t j = 0; j != connMatrix[j].size(); ++j)
+            for (size_t j = 0; j != connMatrix[0].size(); ++j)
             {
                 if (connMatrix[i][j] == std::numeric_limits<size_t>::max())
                     continue;

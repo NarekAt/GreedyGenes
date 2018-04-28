@@ -1,5 +1,6 @@
 #include "CellPlacementMaxConSolver.h"
 #include "CellPlacementMatroid.h"
+#include "resultwritters.h"
 #include <cassert>
 #include <exception>
 #include <limits>
@@ -60,28 +61,7 @@ CellPlacementMatroidParams::ResultType CellPlacementMaxConSolver::GetResults()
 
 std::string CellPlacementMaxConSolver::StoreResults()
 {
-    const std::string fileName = "cell_placement.out";
-    assert(!m_result.empty());
-
-    std::ofstream out;
-    out.open(fileName);
-
-    out << "CELL PLACEMENT" << "\n" << "\n";
-
-    const size_t n = qSqrt(m_result.size());
-
-    size_t j = m_result.size() - 1;
-
-    for (size_t i = 0; i != n; ++i)
-    {
-        for (int k = 0; k != n; ++k)
-        {
-            out << m_result[j--] << " ";
-        }
-        out << "\n";
-    }
-
-    return fileName;
+    return CellPlacementResultWritter().write(m_result);
 }
 
 Cell CellPlacementMaxConSolver::SeedCell()

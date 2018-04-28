@@ -5,12 +5,12 @@
 class PairwiseInterchangeMutatation : public MutatationStrategy
 {
 public:
-    PairwiseInterchangeMutatation(uint16_t mutationRate)
+    PairwiseInterchangeMutatation(double mutationRate)
         : m_rate(mutationRate)
     {}
 
     void Mutate(Generation& gen) override;
 
 private:
-    uint16_t m_rate;
+    double m_rate;
 };

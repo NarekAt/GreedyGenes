@@ -81,7 +81,9 @@ HEADERS += \
     ../GreedyGenesLib/GreedyGenesLib/Algorithm.h \
     ../GreedyGenesLib/GreedyGenesLib/tspgraph.h \
     ../GreedyGenesLib/GreedyGenesLib/tsp.h \
-    ../GreedyGenesLib/GreedyGenesLib/tspmatroid.h
+    ../GreedyGenesLib/GreedyGenesLib/tspmatroid.h \
+    ../GreedyGenesLib/GreedyGenesLib/resultwritter.h \
+    ../GreedyGenesLib/GreedyGenesLib/resultwritters.h
 
 FORMS += \
         mainwindow.ui \

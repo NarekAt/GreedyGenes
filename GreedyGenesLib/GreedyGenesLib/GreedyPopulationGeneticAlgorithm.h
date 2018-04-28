@@ -13,9 +13,10 @@ public:
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
         FitnessEvaluationStrategyPtr fitness,
+        IResultWritterPtr resWritter,
         size_t numOfGenerations,
         size_t numOfChromosomesToReplace)
-        : Base(crossover, mutation, inversion, fitness, numOfGenerations, numOfChromosomesToReplace)
+        : Base(crossover, mutation, inversion, fitness, resWritter, numOfGenerations, numOfChromosomesToReplace)
     {}
 
     GreedyPopulationGeneticAlgorithm() = default;

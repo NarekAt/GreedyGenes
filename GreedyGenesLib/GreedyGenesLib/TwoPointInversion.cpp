@@ -8,7 +8,7 @@ void TwoPointInversion::Inverse(Generation& gen)
 {
     std::random_shuffle(std::begin(gen), std::end(gen));
 
-    const size_t upTo = gen.size() / m_rate;
+    const size_t upTo = gen.size() * m_rate;
 
     for (size_t i = 0; i != upTo; ++i)
     {

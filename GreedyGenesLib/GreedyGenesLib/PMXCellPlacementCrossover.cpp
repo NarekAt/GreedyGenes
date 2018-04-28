@@ -24,7 +24,7 @@ PMXCellPlacementCrossover::Crossover(ChromosomePtr parent1, ChromosomePtr parent
     const auto cutPoint = dist(rng);
 
     Chromosome::Genes offSpring(cutPoint, emptyGene);
-    offSpring.insert(offSpring.end(), genes2.begin() + cutPoint + 1, genes2.end());
+    offSpring.insert(offSpring.end(), genes2.begin() + cutPoint, genes2.end());
 
     std::unordered_map<uint64_t, size_t> mapping;
     for (size_t i = cutPoint + 1; i != size; ++i)

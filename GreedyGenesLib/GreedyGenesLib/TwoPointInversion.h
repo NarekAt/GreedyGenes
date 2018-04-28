@@ -5,12 +5,12 @@
 class TwoPointInversion : public InversionStrategy
 {
 public:
-    TwoPointInversion(uint16_t inversionRate)
+    TwoPointInversion(double inversionRate)
         : m_rate(inversionRate)
     {}
 
     void Inverse(Generation& gen) override;
 
 private:
-    uint16_t m_rate;
+    double m_rate;
 };

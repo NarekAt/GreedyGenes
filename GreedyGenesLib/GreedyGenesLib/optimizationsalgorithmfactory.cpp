@@ -1,5 +1,6 @@
 #include "optimizationsalgorithmfactory.h"
 #include "GreedyAlgorithm.h"
+#include "resultwritters.h"
 
 // greedy
 #include "CellPlacementMaxConSolver.h"
@@ -104,13 +105,14 @@ AlgorithmPtr OptimizationsAlgorithmFactory::InstantiateGeneticAlgorithm(ProblemT
         auto solver = std::make_shared<CellPlacementMaxConSolver>(inputFilePath, params);
 
         auto fitness = std::make_shared<MinWireLengthCellPlacementFitness>(solver->GetProblemMatroid());
-        auto mutation = std::make_shared<PairwiseInterchangeMutatation>(std::stoi(additionalOptions.at("Mutation Rate")));
-        auto inversion = std::make_shared<TwoPointInversion>(std::stoi(additionalOptions.at("Inversion Rate")));
+        auto mutation = std::make_shared<PairwiseInterchangeMutatation>(std::stod(additionalOptions.at("Mutation Rate")));
+        auto inversion = std::make_shared<TwoPointInversion>(std::stod(additionalOptions.at("Inversion Rate")));
         auto crossover = std::make_shared<PMXCellPlacementCrossover>();
+        auto resWritter = std::make_shared<CellPlacementResultWritter>();
         auto numOfGens = std::stoi(additionalOptions.at("Num of Generation"));
 
         // TODO: Replace temp number 10
-        auto algo = std::make_shared<GreedyPopulationGeneticAlgorithm<CellPlacementMatroidParams>>(crossover, mutation, inversion, fitness, numOfGens, numOfGens / 10);
+        auto algo = std::make_shared<GreedyPopulationGeneticAlgorithm<CellPlacementMatroidParams>>(crossover, mutation, inversion, fitness, resWritter, numOfGens, numOfGens / 10);
         auto greedy = std::make_shared<GreedyAlgorithm<CellPlacementMatroidParams>>(solver);
         algo->SetGreedyAlgorithm(*greedy);
 
@@ -165,13 +167,14 @@ AlgorithmPtr OptimizationsAlgorithmFactory::InstantiateGreedyGeneticAlgorithm(Pr
         auto solver = std::make_shared<CellPlacementMaxConSolver>(inputFilePath, params);
 
         auto fitness = std::make_shared<MinWireLengthCellPlacementFitness>(solver->GetProblemMatroid());
-        auto mutation = std::make_shared<PairwiseInterchangeMutatation>(std::stoi(additionalOptions.at("Mutation Rate")));
-        auto inversion = std::make_shared<TwoPointInversion>(std::stoi(additionalOptions.at("Inversion Rate")));
+        auto mutation = std::make_shared<PairwiseInterchangeMutatation>(std::stod(additionalOptions.at("Mutation Rate")));
+        auto inversion = std::make_shared<TwoPointInversion>(std::stod(additionalOptions.at("Inversion Rate")));
         auto crossover = std::make_shared<PMXCellPlacementCrossover>();
+        auto resWritter = std::make_shared<CellPlacementResultWritter>();
         auto numOfGens = std::stoi(additionalOptions.at("Num of Generation"));
 
         // TODO: Replace temp number 10
-        return std::make_shared<IncrementalGeneticAlgorithm<CellPlacementMatroidParams>>(crossover, mutation, inversion, fitness, numOfGens, numOfGens / 10);
+        return std::make_shared<IncrementalGeneticAlgorithm<CellPlacementMatroidParams>>(crossover, mutation, inversion, fitness, resWritter, numOfGens, numOfGens / 10);
     }
     case ProblemType::VLSI_FLOOR_PLANNING:
     {

@@ -6,6 +6,7 @@
 #include "MutationStrategy.h"
 #include "InversionStrategy.h"
 #include "FitnessEvaluationStrategy.h"
+#include "resultwritter.h"
 #include <algorithm>
 
 template <class Params>
@@ -18,11 +19,13 @@ public:
         MutatationStrategyPtr mutation,
         InversionStrategyPtr inversion,
         FitnessEvaluationStrategyPtr fitness,
+        IResultWritterPtr resultWritter,
         size_t numOfGenerations)
         : m_crossover(crossover)
         , m_mutation(mutation)
         , m_inversion(inversion)
         , m_fitness(fitness)
+        , m_resWritter(resultWritter)
         , m_numberOfGenerations(numOfGenerations)
     {}
 
@@ -51,7 +54,7 @@ public:
 
     std::string StoreResultsInFile() override
     {
-        return "";
+        return m_resWritter->write(GetBestChromosome()->Representation());
     }
 
     ChromosomePtr GetBestChromosome()
@@ -97,6 +100,7 @@ protected:
     MutatationStrategyPtr        m_mutation;
     InversionStrategyPtr         m_inversion;
     FitnessEvaluationStrategyPtr m_fitness;
+    IResultWritterPtr            m_resWritter;
 
     Generation m_generation;
 
