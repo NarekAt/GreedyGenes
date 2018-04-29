@@ -68,7 +68,7 @@ public:
 
         if (algo == nullptr)
         {
-            // TODO: error handling
+            m_errMsg->showMessage("Internal library error");
             return;
         }
 

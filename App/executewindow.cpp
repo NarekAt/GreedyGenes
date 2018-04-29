@@ -20,14 +20,47 @@ ExecuteWindow::~ExecuteWindow()
 
 void ExecuteWindow::on_solveButton_clicked()
 {
-    problemSolver->Solve();
+    auto solve = [this]()
+    {
+        problemSolver->Solve();
+    };
+
+    auto res = std::async(std::launch::async, solve);
+
+    try
+    {
+        res.get();
+    }
+    catch(...)
+    {
+        // Error handling
+
+        return;
+    }
 
     ui->resultsButton->setEnabled(true);
 }
 
 void ExecuteWindow::on_resultsButton_clicked()
 {
-    auto file = problemSolver->GetResultFile();
+    QString file;
+
+    auto getRes = [&]()
+    {
+        file = problemSolver->GetResultFile();
+    };
+
+    auto res = std::async(std::launch::async, getRes);
+
+    try
+    {
+        res.get();
+    }
+    catch(...)
+    {
+        // Error handling
+        return;
+    }
 
     // FIXME: Temp hack
     if (problemSolver->GetProblemType() == ProblemType::TRAVELING_SALESMAN)
